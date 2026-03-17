@@ -22,7 +22,7 @@ You are required to complete the functions in `functions.py`.
 # How to Run the Code
 
 ```bash
-python functions.py
+python3 functions.py
 ```
 
 ---
@@ -32,19 +32,19 @@ python functions.py
 ### Run all tests
 
 ```bash
-python -m unittest test_functions.py
+python3 -m unittest test_functions.py
 ```
 
 ### Run a single test class
 
 ```bash
-python -m unittest test_functions.TestFunctions
+python3 -m unittest test_functions.TestFunctions
 ```
 
 ### Run a single test
 
 ```bash
-python -m unittest test_functions.TestFunctions.test_separate_scores
+python3 -m unittest test_functions.TestFunctions.test_separate_scores
 ```
 
 ---

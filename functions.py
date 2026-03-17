@@ -1,5 +1,12 @@
 def separate_scores(scores):
-    pass
+    math_score = []
+    science_score = []
+
+    for math, science in scores:
+        math_score.append(math)
+        science_score.append(science)
+    
+    return math_score, science_score
 
 
 def split_coordinates(coords):
