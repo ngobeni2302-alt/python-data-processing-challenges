@@ -10,28 +10,76 @@ def separate_scores(scores):
 
 
 def split_coordinates(coords):
-    pass
 
+    new = [x for x, y in coords]
+    news = [y for x, y in coords]
+
+    return new, news
 
 def build_student_index(students):
-    pass
+    return {student : students.index(student) for student in students}
 
 
 def map_items_to_position(items):
-    pass
+    dict = {}
+    for i, item in enumerate(items):
+        dict[item] = i
+    return dict
 
 
 def normalize_tags(tags):
-    pass
-
+    return set(x.lower() for x in tags)
 
 def clean_usernames(usernames):
-    pass
+    new_usernames = set()
 
+    for username in usernames:
+        new_usernames.add(username.lower())
+    return new_usernames
 
 def group_by_city(people):
-    pass
+    """
+    [
+    {"name": "Alice", "city": "Cape Town"},
+    {"name": "Bob", "city": "Cape Town"}
+]
+    """
+    city_people = {}
+
+    for i in people:
+        name = i["name"]
+        people = i["city"]
+
+        if people not in city_people:
+            city_people[people] = []
+        city_people[people].append(name)
+    return city_people
 
 
 def categorize_books(books):
-    pass
+    """
+    [
+    {"title": "Book1", "genre": "Fiction"},
+    {"title": "Book2", "genre": "Horror"},
+    {"title": "Book1", "genre": "Fiction"},
+    {"title": "Book2", "genre": "Romance"}    
+]
+    """
+
+    books_read = {}
+
+    for book in books:
+        title = book["title"]
+        genre = book["genre"]
+
+        if genre not in books_read:
+            books_read[genre] = []
+        books_read[genre].append(title)
+    return books_read
+
+print(categorize_books([
+    {"title": "Book1", "genre": "Fiction"},
+    {"title": "Book2", "genre": "Horror"},
+    {"title": "Book1", "genre": "Fiction"},
+    {"title": "Book2", "genre": "Romance"}    
+]))
